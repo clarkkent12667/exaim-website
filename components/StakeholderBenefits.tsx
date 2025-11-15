@@ -36,7 +36,7 @@ const stakeholders = [
     benefits: [
       'Access real-time, data-driven insights to support digital transformation and improve outcomes at scale.',
     ],
-    color: 'from-purple-500 to-purple-600',
+    color: 'from-primary-500 to-primary-600',
   },
 ]
 
@@ -45,15 +45,15 @@ export default function StakeholderBenefits() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="stakeholders" ref={ref} className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="stakeholders" ref={ref} className="section-padding bg-gray-50">
+      <div className="container-wrapper">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Powering personalised exam preparation for an entire school ecosystem
           </h2>
         </motion.div>
@@ -70,7 +70,7 @@ export default function StakeholderBenefits() {
                 scale: 1.03,
                 rotateY: 5
               }}
-              className="relative bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all group cursor-pointer overflow-hidden hover-3d hover-glow-intense"
+              className="relative bg-white rounded-xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all group cursor-pointer overflow-hidden hover-3d hover-glow-intense"
             >
               {/* Animated background */}
               <motion.div
@@ -93,7 +93,7 @@ export default function StakeholderBenefits() {
                 />
                 <stakeholder.icon className="w-8 h-8 text-white relative z-10" />
               </motion.div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 relative z-10 group-hover:text-primary-600 transition-colors">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 relative z-10 group-hover:text-primary-600 transition-colors">
                 {stakeholder.title}
               </h3>
               <ul className="space-y-3 relative z-10">
@@ -103,7 +103,7 @@ export default function StakeholderBenefits() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: index * 0.1 + i * 0.1 }}
-                    className="text-gray-600 flex items-start group/item"
+                    className="text-gray-700 flex items-start group/item"
                   >
                     <motion.span
                       animate={{ scale: [1, 1.2, 1] }}

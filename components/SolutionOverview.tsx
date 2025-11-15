@@ -10,7 +10,7 @@ const features = [
     icon: Sparkles,
     title: 'Automated',
     desc: 'Examiner-trained AI grading and feedback significantly reduce marking time.',
-    gradient: 'from-purple-500 to-pink-500',
+    gradient: 'from-primary-500 to-secondary-500',
   },
   {
     icon: Zap,

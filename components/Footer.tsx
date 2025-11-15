@@ -18,7 +18,7 @@ export default function Footer() {
       title: 'Product',
       links: [
         { href: '/pricing', label: 'Pricing' },
-        { href: '/demo', label: 'Demo' },
+        { href: '/demo', label: 'See ExAIm in Action' },
       ],
     },
     {
@@ -77,8 +77,8 @@ export default function Footer() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div className="relative z-10 container-wrapper">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 mb-12">
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ export default function Footer() {
                 />
               </Link>
             </div>
-            <p className="text-sm text-gray-200 leading-relaxed">
+            <p className="text-sm text-gray-300 leading-relaxed">
               AI-powered exam preparation platform for schools worldwide.
             </p>
           </motion.div>
@@ -110,7 +110,7 @@ export default function Footer() {
               animate={mounted ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
             >
-              <h4 className="font-semibold text-white mb-6 text-lg relative">
+              <h4 className="font-semibold text-white mb-6 text-base md:text-lg relative">
                 {section.title}
                 <motion.div
                   className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-400"
@@ -129,7 +129,7 @@ export default function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="group relative text-sm text-gray-200 hover:text-white transition-colors inline-block"
+                      className="group relative text-sm text-gray-300 hover:text-white transition-colors inline-block"
                     >
                       {link.label}
                       <motion.span
@@ -149,7 +149,7 @@ export default function Footer() {
             animate={mounted ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="font-semibold text-white mb-6 text-lg relative">
+            <h4 className="font-semibold text-white mb-6 text-base md:text-lg relative">
               Connect
               <motion.div
                 className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-400"
@@ -171,7 +171,7 @@ export default function Footer() {
                     target={social.external ? '_blank' : undefined}
                     rel={social.external ? 'noopener noreferrer' : undefined}
                     whileHover={{ x: 5, scale: 1.05 }}
-                    className="flex items-center gap-3 text-sm text-gray-200 hover:text-white transition-colors group"
+                    className="flex items-center gap-3 text-sm text-gray-300 hover:text-white transition-colors group"
                   >
                     <motion.div
                       className="p-2 bg-gray-800 rounded-lg group-hover:bg-gradient-to-r group-hover:from-primary-600 group-hover:to-secondary-600 transition-all"

@@ -44,18 +44,18 @@ export default function CurriculumSupport() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="curriculum" ref={ref} className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="curriculum" ref={ref} className="section-padding bg-gradient-to-br from-primary-50 to-secondary-50">
+      <div className="container-wrapper">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Built for every curriculum.
           </h2>
-          <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
             ExAIm intelligently adapts to a wide range of international curriculums, exam formats, and learning objectives.
           </p>
         </motion.div>
@@ -93,7 +93,7 @@ export default function CurriculumSupport() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3 }}
-          className="bg-white rounded-2xl p-8 shadow-xl"
+          className="bg-white rounded-xl p-6 md:p-8 shadow-xl"
         >
           {/* Qualifications */}
           <div className="mb-8">

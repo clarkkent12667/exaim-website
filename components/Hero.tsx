@@ -90,7 +90,7 @@ export default function Hero() {
   const headlineWords = "Improve student attainment with AI-powered exam preparation".split(' ')
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-visible bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20 pb-24 md:pb-32">
       {/* Enhanced Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -144,7 +144,7 @@ export default function Hero() {
         
         {/* Additional floating orbs */}
         <motion.div
-          className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
+          className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-primary-400/20 to-secondary-400/20 rounded-full blur-3xl"
           initial={{ scale: 0, opacity: 0 }}
           animate={{
             scale: [1, 1.2, 1],
@@ -190,7 +190,7 @@ export default function Hero() {
       )}
 
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
+        className="relative z-10 container-wrapper py-16 md:py-20"
         variants={containerVariants}
         initial="hidden"
         animate={mounted ? "visible" : "hidden"}
@@ -198,7 +198,7 @@ export default function Hero() {
         <div className="text-center">
           {/* Enhanced Main Headline with Stagger Animation */}
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
             variants={containerVariants}
             initial="hidden"
             animate={mounted ? "visible" : "hidden"}
@@ -233,7 +233,7 @@ export default function Hero() {
             variants={itemVariants}
             initial="hidden"
             animate={mounted ? "visible" : "hidden"}
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto"
           >
             ExAIm uses simulated exam conditions, automated marking, and personalised examiner-level feedback to help every student achieve better results — while reducing teacher workload.
           </motion.p>
@@ -243,15 +243,15 @@ export default function Hero() {
             variants={containerVariants}
             initial="hidden"
             animate={mounted ? "visible" : "hidden"}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-12"
           >
             <motion.a
-              href="/demo"
+              href="/book-a-demo"
               variants={itemVariants}
               whileHover={{
                 scale: 1.05,
                 y: -2,
-                boxShadow: "0 20px 40px rgba(37, 99, 235, 0.3)",
+                boxShadow: "0 20px 40px rgba(33, 96, 243, 0.3)",
                 transition: { type: "spring", stiffness: 400, damping: 17 }
               }}
               whileTap={{
@@ -279,12 +279,12 @@ export default function Hero() {
             </motion.a>
             
             <motion.a
-              href="/demo"
+              href="/book-a-demo"
               variants={itemVariants}
               whileHover={{
                 scale: 1.05,
                 y: -5,
-                boxShadow: "0 20px 40px rgba(37, 99, 235, 0.2)",
+                boxShadow: "0 20px 40px rgba(33, 96, 243, 0.2)",
                 transition: { type: "spring", stiffness: 400, damping: 17 }
               }}
               whileTap={{
@@ -321,7 +321,7 @@ export default function Hero() {
             variants={containerVariants}
             initial="hidden"
             animate={mounted ? "visible" : "hidden"}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto mt-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto mt-8"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -334,7 +334,7 @@ export default function Hero() {
                   rotateX: 2,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
-                className="relative bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover-glow-intense hover-3d group cursor-pointer overflow-hidden"
+                className="relative bg-white/80 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-lg hover-glow-intense hover-3d group cursor-pointer overflow-hidden"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-primary-600/10 to-secondary-600/10 rounded-xl opacity-0 group-hover:opacity-100"
@@ -374,43 +374,6 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Enhanced Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 1.5,
-          type: "spring",
-          stiffness: 100,
-          damping: 15
-        }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          whileHover={{
-            scale: 1.2,
-            borderColor: "rgb(37, 99, 235)",
-            transition: { type: "spring", stiffness: 400, damping: 17 }
-          }}
-          className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center cursor-pointer"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="w-1 h-3 bg-gray-400 rounded-full mt-2"
-          />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

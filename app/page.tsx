@@ -1,28 +1,16 @@
+'use client'
+
 import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
 import ScrollAnimations from '@/components/ScrollAnimations'
+import ExamAttemptPreview from '@/components/exaim/ExamAttemptPreview'
 
 // Lazy load below-the-fold components
-const ProblemStatement = dynamic(() => import('@/components/ProblemStatement'), {
-  loading: () => <div className="min-h-[400px]" />,
-})
-const SolutionOverview = dynamic(() => import('@/components/SolutionOverview'), {
-  loading: () => <div className="min-h-[400px]" />,
-})
 const CurriculumSupport = dynamic(() => import('@/components/CurriculumSupport'), {
   loading: () => <div className="min-h-[400px]" />,
 })
-const SocialProof = dynamic(() => import('@/components/SocialProof'), {
-  loading: () => <div className="min-h-[400px]" />,
-})
 const StakeholderBenefits = dynamic(() => import('@/components/StakeholderBenefits'), {
-  loading: () => <div className="min-h-[400px]" />,
-})
-const Methodology = dynamic(() => import('@/components/Methodology'), {
-  loading: () => <div className="min-h-[400px]" />,
-})
-const HowItWorks = dynamic(() => import('@/components/HowItWorks'), {
   loading: () => <div className="min-h-[400px]" />,
 })
 const FoundersTeam = dynamic(() => import('@/components/FoundersTeam'), {
@@ -34,8 +22,14 @@ const Pricing = dynamic(() => import('@/components/Pricing'), {
 const FinalCTA = dynamic(() => import('@/components/FinalCTA'), {
   loading: () => <div className="min-h-[300px]" />,
 })
+const HowItWorksSection = dynamic(() => import('@/app/(marketing)/_components/how-it-works-section'), {
+  loading: () => <div className="min-h-[600px]" />,
+})
 const Footer = dynamic(() => import('@/components/Footer'), {
   loading: () => <div className="min-h-[200px]" />,
+})
+const TestimonialsWithLogos = dynamic(() => import('@/components/TestimonialsWithLogos'), {
+  loading: () => <div className="min-h-[400px]" />,
 })
 
 export default function Home() {
@@ -44,13 +38,13 @@ export default function Home() {
       <ScrollAnimations />
       <Navbar />
       <Hero />
-      <ProblemStatement />
-      <SolutionOverview data-fade-in />
+      <div className="relative -mt-20 md:-mt-24 lg:-mt-32 z-20 bg-gradient-to-b from-transparent via-transparent to-white">
+        <ExamAttemptPreview />
+      </div>
+      <HowItWorksSection />
       <CurriculumSupport />
-      <SocialProof />
+      <TestimonialsWithLogos />
       <StakeholderBenefits />
-      <Methodology />
-      <HowItWorks />
       <FoundersTeam />
       <Pricing />
       <FinalCTA />

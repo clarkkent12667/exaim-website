@@ -148,7 +148,7 @@ export default function SocialProof() {
             <div className="flex">
               {/* First set of logos */}
               <motion.div
-                className="flex gap-8 md:gap-12 shrink-0"
+                className="flex gap-1 shrink-0"
                 animate={{
                   x: ['0%', '-50%'],
                 }}
@@ -156,7 +156,7 @@ export default function SocialProof() {
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 60,
+                    duration: 20,
                     ease: "linear",
                   },
                 }}
@@ -165,13 +165,13 @@ export default function SocialProof() {
                   <motion.div
                     key={`first-${index}`}
                     whileHover={{ scale: 1.1 }}
-                    className="flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors h-32 w-48 md:w-56 shrink-0"
+                    className="flex items-center justify-center h-20 w-40 md:w-48 shrink-0"
                   >
                     <Image
                       src={school.logo}
                       alt={school.name}
                       width={200}
-                      height={80}
+                      height={60}
                       className="max-w-full max-h-full object-contain"
                       unoptimized
                     />

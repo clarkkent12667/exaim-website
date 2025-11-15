@@ -10,7 +10,7 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 0 0% 0%;
     --foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
   }
@@ -34,8 +34,23 @@
     text-wrap: balance;
   }
   
+  /* Consistent section padding */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  /* Consistent container padding */
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Consistent container wrapper */
+  .container-wrapper {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
   .gradient-mesh {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2160f3 0%, #0069ff 100%);
     background-size: 200% 200%;
     animation: gradient 8s ease infinite;
   }
@@ -83,7 +98,7 @@
     @apply transition-all duration-300;
   }
   .hover-glow-intense:hover {
-    box-shadow: 0 0 30px rgba(37, 99, 235, 0.6), 0 0 60px rgba(109, 40, 217, 0.4);
+    box-shadow: 0 0 30px rgba(33, 96, 243, 0.6), 0 0 60px rgba(0, 105, 255, 0.4);
     transform: translateY(-8px) scale(1.02);
   }
   
@@ -145,7 +160,7 @@
   
   .animated-border {
     position: relative;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2160f3 0%, #0069ff 100%);
     padding: 2px;
     border-radius: 12px;
   }
@@ -155,7 +170,7 @@
     inset: -2px;
     border-radius: 12px;
     padding: 2px;
-    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe, #667eea);
+    background: linear-gradient(45deg, #2160f3, #0069ff, #4787f7, #75a5f9, #2160f3);
     background-size: 300% 300%;
     animation: gradient-rotate 3s ease infinite;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -183,11 +198,11 @@
   .text-shimmer {
     background: linear-gradient(
       90deg,
-      #667eea 0%,
-      #764ba2 25%,
-      #f093fb 50%,
-      #764ba2 75%,
-      #667eea 100%
+      #2160f3 0%,
+      #0069ff 25%,
+      #4787f7 50%,
+      #0069ff 75%,
+      #2160f3 100%
     );
     background-size: 200% auto;
     background-clip: text;
@@ -245,10 +260,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 0 20px rgba(33, 96, 243, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(37, 99, 235, 0.8), 0 0 60px rgba(109, 40, 217, 0.6);
+    box-shadow: 0 0 40px rgba(33, 96, 243, 0.8), 0 0 60px rgba(0, 105, 255, 0.6);
   }
 }
 
