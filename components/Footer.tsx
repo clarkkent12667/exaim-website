@@ -55,7 +55,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 text-gray-300 py-12 md:py-16 lg:py-20 overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 text-gray-300 pt-12 md:pt-16 lg:pt-20 pb-4 md:pb-6 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -203,7 +203,7 @@ export default function Footer() {
           initial={{ opacity: 0 }}
           animate={mounted ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="border-t border-gray-800 pt-8 md:pt-12 lg:pt-16 mt-12 md:mt-16"
+          className="border-t border-gray-800 pt-3 md:pt-4 mt-6 md:mt-8"
         >
           <div className="text-center">
             <p className="text-xs md:text-sm text-gray-300">
