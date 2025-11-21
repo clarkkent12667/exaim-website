@@ -63,7 +63,7 @@ function HeroSection() {
               How ExAIm works
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              ExAIm uses AI-powered assessments to streamline exam preparation, automate marking, and personalise learning to improve student outcomes. Transform how your school prepares students for GCSE, A-Level, IB, and other curricula.
+              ExAIm uses AI-powered assessments to streamline exam preparation, automate marking, and personalise learning to improve student outcomes. Transform how your school prepares students for GCSE, A-Level, IB, and other curricula. Explore our <Link href="/our-products" className="text-primary-600 hover:text-primary-700 underline font-medium">complete product suite</Link> or learn about our <Link href="/why-exaim/methodology" className="text-primary-600 hover:text-primary-700 underline font-medium">proven methodology</Link>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
               <motion.div
@@ -107,7 +107,7 @@ function HeroSection() {
             <div className="relative rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
               <Image
                 src="/img/preview/preview-image.png"
-                alt="ExAIm Platform Preview"
+                alt="ExAIm AI-powered exam preparation platform dashboard showing assignment creation and student analytics"
                 width={1600}
                 height={1000}
                 className="w-full h-auto object-contain"
@@ -287,7 +287,7 @@ function WalkthroughSection() {
                       >
                         <Image
                           src={step.image}
-                          alt={step.title}
+                          alt={`${step.title} - ${step.description}`}
                           width={1200}
                           height={800}
                           className="w-full h-full object-contain transition-transform duration-700 group-hover/card:scale-105"
@@ -349,7 +349,7 @@ function WalkthroughSection() {
                 <div className="relative w-full h-full flex items-center justify-center p-4">
                   <Image
                     src={step.image}
-                    alt={step.title}
+                    alt={`${step.title} - ${step.description}`}
                     width={1200}
                     height={800}
                     className="w-full h-full object-contain"

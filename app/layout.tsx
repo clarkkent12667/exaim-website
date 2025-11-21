@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const inter = Inter({ 
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     description: 'Improving student attainment with AI-powered exam preparation. Trusted by 5,000+ students across 20+ globally renowned schools.',
     url: 'https://www.exaim.ai',
     siteName: 'ExAIm',
-    locale: 'en_US',
+    locale: 'en_GB',
     type: 'website',
     images: [
       {
@@ -71,14 +72,25 @@ const organizationSchema = {
   url: 'https://www.exaim.ai',
   logo: 'https://www.exaim.ai/logo/logo.png',
   description: 'AI-powered exam preparation platform for schools',
+  foundingDate: '2021',
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'contact@exaim.ai',
     contactType: 'Customer Service',
+    areaServed: ['GB', 'AE', 'Worldwide'],
   },
   sameAs: [
     'https://twitter.com/exaimltd',
+    'https://www.linkedin.com/company/exaimltd',
   ],
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'GB',
+    addressLocality: 'Aylesbury',
+    addressRegion: 'Buckinghamshire',
+    postalCode: 'HP18 0RA',
+    streetAddress: '2 Crossways Business Centre, Bicester Road, Kingswood',
+  },
 }
 
 export default function RootLayout({
@@ -87,7 +99,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en-GB" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
@@ -100,6 +112,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )

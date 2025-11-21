@@ -1,19 +1,16 @@
 import type { Metadata } from 'next'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Terms and Conditions - ExAIm Limited',
-  description: 'Terms and Conditions for ExAIm Limited. Effective from 1st March 2025. Governing access and use of ExAIm\'s AI-driven grading and assessment platform.',
-  openGraph: {
-    title: 'Terms and Conditions - ExAIm Limited',
-    description: 'Terms and Conditions for ExAIm\'s AI-powered exam preparation platform.',
-  },
-}
+export const metadata: Metadata = createPageMetadata({
+  title: 'Terms and Conditions - ExAIm Platform Terms',
+  description: 'Terms and Conditions governing the use of ExAIm\'s AI-powered exam preparation platform. Read our terms of service, user responsibilities, and platform usage guidelines.',
+  path: '/terms-and-conditions',
+})
 
 export default function TermsAndConditionsLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return <>{children}</>
 }
-

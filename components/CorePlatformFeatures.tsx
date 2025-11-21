@@ -101,7 +101,7 @@ export default function CorePlatformFeatures() {
               <div className="relative w-full aspect-video md:aspect-auto">
                 <Image
                   src="/img/preview/preview-image.png"
-                  alt="ExAIm Platform UI Screenshot"
+                  alt="ExAIm AI-powered exam preparation platform interface showing automated marking, analytics dashboard, and student performance insights"
                   width={800}
                   height={600}
                   className="w-full h-auto object-contain"

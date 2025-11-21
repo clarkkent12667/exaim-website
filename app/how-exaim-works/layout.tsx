@@ -1,13 +1,11 @@
 import type { Metadata } from 'next'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'How ExAIm Works - AI-Powered Exam Preparation Platform',
-  description: 'Discover how ExAIm uses AI-powered assessments to streamline exam preparation, automate marking, and personalise learning to improve student outcomes across GCSE, A-Level, IB, and other curricula.',
-  openGraph: {
-    title: 'How ExAIm Works - AI-Powered Exam Preparation',
-    description: 'Learn how ExAIm transforms exam preparation with AI-powered marking, instant feedback, and detailed analytics for teachers and students.',
-  },
-}
+  description: 'See how ExAIm transforms exam preparation with AI-powered marking, automated feedback, and comprehensive analytics. Learn how schools use ExAIm for GCSE, A-Level, and IB exam preparation.',
+  path: '/how-exaim-works',
+})
 
 export default function HowExAImWorksLayout({
   children,
@@ -16,4 +14,3 @@ export default function HowExAImWorksLayout({
 }) {
   return <>{children}</>
 }
-

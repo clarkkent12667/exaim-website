@@ -4,17 +4,40 @@ import ScrollAnimations from '@/components/ScrollAnimations'
 import type { Metadata } from 'next'
 import DemoBookingForm from './_components/DemoBookingForm'
 import { Mail, Linkedin } from 'lucide-react'
+import Link from 'next/link'
 
 const Footer = dynamic(() => import('@/components/Footer'), {
   loading: () => <div className="min-h-[200px]" />,
 })
 
 export const metadata: Metadata = {
-  title: 'Book a Demo - ExAIm | Schedule Your Personalized Demo',
-  description: 'Book a personalized demo to explore how ExAIm can support your school, reduce teacher workload, and improve student attainment.',
+  title: 'Book a Demo - Schedule Your Personalized Demo',
+  description: 'Book a personalized demo to explore how ExAIm can support your school, reduce teacher workload, and improve student attainment. See how AI-powered exam preparation can transform your school.',
+  alternates: {
+    canonical: 'https://www.exaim.ai/book-a-demo',
+  },
   openGraph: {
     title: 'Book a Demo - ExAIm',
+    description: 'Schedule your personalized demo with ExAIm to see how AI-powered exam preparation can transform your school.',
+    url: 'https://www.exaim.ai/book-a-demo',
+    siteName: 'ExAIm',
+    locale: 'en_GB',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Book a Demo - ExAIm',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Book a Demo - ExAIm',
     description: 'Schedule your personalized demo with ExAIm.',
+    creator: '@exaimltd',
+    images: ['/og-image.jpg'],
   },
 }
 
@@ -30,7 +53,7 @@ export default function BookADemoPage() {
               Book a Demo
             </h1>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-              Fill out the form below and we'll get back to you to schedule a personalized demo at a time that works for you.
+              Fill out the form below and we'll get back to you to schedule a personalized demo at a time that works for you. Learn more about <Link href="/our-products" className="text-primary-600 hover:text-primary-700 underline font-medium">our products</Link> or see <Link href="/how-exaim-works" className="text-primary-600 hover:text-primary-700 underline font-medium">how ExAIm works</Link>.
             </p>
           </div>
 

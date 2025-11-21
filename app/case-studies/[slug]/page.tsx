@@ -1,15 +1,49 @@
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import ScrollAnimations from '@/components/ScrollAnimations'
+import StructuredData from '@/components/StructuredData'
+import { createBreadcrumbSchema } from '@/lib/metadata'
 import type { Metadata } from 'next'
 
 const Footer = dynamic(() => import('@/components/Footer'), {
   loading: () => <div className="min-h-[200px]" />,
 })
 
-export const metadata: Metadata = {
-  title: 'Case Study - ExAIm | How Schools Improved Exam Outcomes',
-  description: 'See how schools improved exam outcomes using ExAIm.',
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  // TODO: Fetch case study data to generate dynamic metadata
+  const title = `Case Study - How Schools Improved Exam Outcomes with ExAIm`
+  const description = `Discover how schools are using ExAIm's AI-powered exam preparation platform to improve student outcomes, reduce marking time, and enhance teaching effectiveness.`
+  
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.exaim.ai/case-studies/${params.slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://www.exaim.ai/case-studies/${params.slug}`,
+      siteName: 'ExAIm',
+      locale: 'en_GB',
+      type: 'article',
+      images: [
+        {
+          url: '/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      creator: '@exaimltd',
+      images: ['/og-image.jpg'],
+    },
+  }
 }
 
 // TODO: Replace with actual case study data from CMS or database
@@ -18,6 +52,12 @@ export const metadata: Metadata = {
 //   return null
 // }
 
+export async function generateStaticParams() {
+  // TODO: Replace with actual case study slugs from CMS or database
+  // For now, return empty array - case studies will be dynamically generated
+  return []
+}
+
 export default function CaseStudyPage({ params }: { params: { slug: string } }) {
   // TODO: Uncomment when data fetching is implemented
   // const caseStudy = await getCaseStudy(params.slug)
@@ -25,8 +65,41 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   //   notFound()
   // }
 
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Case Studies', url: '/case-studies' },
+    { name: 'Case Study', url: `/case-studies/${params.slug}` },
+  ])
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'How Schools Improved Exam Outcomes Using ExAIm',
+    description: 'See how schools are using ExAIm\'s AI-powered exam preparation platform to improve student outcomes.',
+    author: {
+      '@type': 'Organization',
+      name: 'ExAIm',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ExAIm',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.exaim.ai/logo/logo.png',
+      },
+    },
+    datePublished: '2024-01-01',
+    dateModified: '2024-01-01',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.exaim.ai/case-studies/${params.slug}`,
+    },
+  }
+
   return (
     <main className="min-h-screen">
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={articleSchema} />
       <ScrollAnimations />
       <Navbar />
       <section className="pt-32 pb-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">

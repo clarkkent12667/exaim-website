@@ -3,6 +3,8 @@
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import ScrollAnimations from '@/components/ScrollAnimations'
+import StructuredData from '@/components/StructuredData'
+import { createBreadcrumbSchema } from '@/lib/metadata'
 import DataSecurity from '@/components/DataSecurity'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -281,9 +283,16 @@ function LegalDocumentsSection() {
   )
 }
 
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: 'Home', url: '/' },
+  { name: 'Why ExAIm', url: '/why-exaim' },
+  { name: 'Security', url: '/why-exaim/security' },
+])
+
 export default function SecurityPage() {
   return (
     <main className="min-h-screen bg-white">
+      <StructuredData data={breadcrumbSchema} />
       <ScrollAnimations />
       <Navbar />
       <HeroSection />

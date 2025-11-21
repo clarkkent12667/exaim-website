@@ -55,7 +55,7 @@ export default function Navbar() {
             <Link href="/" prefetch={true} className="flex items-center">
               <Image 
                 src="/logo/logo.png" 
-                alt="ExAIm Logo" 
+                alt="ExAIm - AI-Powered Exam Preparation Platform" 
                 width={120}
                 height={40}
                 className="h-10 w-auto"

@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import ScrollAnimations from '@/components/ScrollAnimations'
+import StructuredData from '@/components/StructuredData'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Check, Sparkles, BarChart, FileText, Users, ArrowRight, Zap, TrendingUp, Target } from 'lucide-react'
@@ -179,12 +180,6 @@ export default function OurProductsPage() {
                 <span>Book a Demo</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="/pricing"
-                className="px-6 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-lg font-semibold hover:border-primary-500 hover:text-primary-600 transition-all duration-300"
-              >
-                View Pricing
-              </Link>
             </motion.div>
           </motion.div>
 
@@ -347,12 +342,6 @@ export default function OurProductsPage() {
               >
                 <span>Start Free Trial</span>
                 <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/pricing"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300"
-              >
-                View Pricing
               </Link>
             </div>
           </motion.div>

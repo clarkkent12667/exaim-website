@@ -5,6 +5,7 @@ import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
 import ScrollAnimations from '@/components/ScrollAnimations'
 import CorePlatformFeatures from '@/components/CorePlatformFeatures'
+import StructuredData from '@/components/StructuredData'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { BookOpen, Clock, Zap, BarChart3, Target } from 'lucide-react'
@@ -114,9 +115,44 @@ function WorkflowOverviewSection() {
   )
 }
 
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'ExAIm',
+  applicationCategory: 'EducationalApplication',
+  operatingSystem: 'Web',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'GBP',
+    availability: 'https://schema.org/InStock',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    reviewCount: '20',
+  },
+  description: 'AI-powered exam preparation platform for schools. Streamline assessments, automate grading, and boost learning outcomes.',
+  featureList: [
+    'AI-powered marking for open-ended answers',
+    'Exam-board aligned feedback',
+    'Comprehensive analytics and insights',
+    'Student exam interface',
+    'Assignment and assessment creation',
+  ],
+  screenshot: 'https://www.exaim.ai/img/preview/preview-image.png',
+  url: 'https://www.exaim.ai',
+  author: {
+    '@type': 'Organization',
+    name: 'ExAIm',
+    url: 'https://www.exaim.ai',
+  },
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
+      <StructuredData data={productSchema} />
       <ScrollAnimations />
       <Navbar />
       <Hero />

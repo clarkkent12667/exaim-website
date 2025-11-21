@@ -1,8 +1,9 @@
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import ScrollAnimations from '@/components/ScrollAnimations'
+import StructuredData from '@/components/StructuredData'
 import type { Metadata } from 'next'
-import { Play, Check } from 'lucide-react'
+import { Check } from 'lucide-react'
 import DemoBookingForm from './_components/DemoBookingForm'
 
 const Footer = dynamic(() => import('@/components/Footer'), {
@@ -13,11 +14,33 @@ const TestimonialsWithLogos = dynamic(() => import('@/components/TestimonialsWit
 })
 
 export const metadata: Metadata = {
-  title: 'See ExAIm in Action - ExAIm',
-  description: 'Book a personalised demo to explore how ExAIm can support your school, reduce teacher workload, and improve student attainment.',
+  title: 'See ExAIm in Action - Book a Demo',
+  description: 'Book a personalised demo to explore how ExAIm can support your school, reduce teacher workload, and improve student attainment. See our AI-powered exam preparation platform in action.',
+  alternates: {
+    canonical: 'https://www.exaim.ai/demo',
+  },
   openGraph: {
-    title: 'See ExAIm in Action - ExAIm',
+    title: 'See ExAIm in Action - Book a Demo',
+    description: 'See ExAIm in action with a personalised demo. Discover how AI-powered exam preparation can transform your school.',
+    url: 'https://www.exaim.ai/demo',
+    siteName: 'ExAIm',
+    locale: 'en_GB',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'See ExAIm in Action',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'See ExAIm in Action - Book a Demo',
     description: 'See ExAIm in action with a personalised demo.',
+    creator: '@exaimltd',
+    images: ['/og-image.jpg'],
   },
 }
 
@@ -36,9 +59,23 @@ const faqs = [
   },
 ]
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+}
+
 export default function DemoPage() {
   return (
     <main className="min-h-screen">
+      <StructuredData data={faqSchema} />
       <ScrollAnimations />
       <Navbar />
       <section className="section-padding-lg pt-32 md:pt-40 lg:pt-44 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
@@ -52,18 +89,6 @@ export default function DemoPage() {
             </p>
           </div>
 
-          {/* TODO: Product explainer video - Replace placeholder with actual video */}
-          <div className="bg-white rounded-xl p-6 md:p-8 lg:p-10 shadow-xl mb-12 md:mb-16">
-            <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center mb-8">
-              <div className="text-center">
-                <Play className="w-20 h-20 text-primary-600 mx-auto mb-4" />
-                <p className="text-gray-700">Product Explainer Video</p>
-                <p className="text-sm text-gray-500 mt-2">(Video placeholder - to be added)</p>
-              </div>
-            </div>
-          </div>
-
-          {/* TODO: Motion GIFs - Add UI demo GIFs showing product features */}
 
           {/* Benefits */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-16">
