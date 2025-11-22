@@ -157,7 +157,7 @@ const PreviewWithFeatures: React.FC = () => {
             className="relative order-1 md:order-2 lg:order-2 md:col-span-2 lg:col-span-1 mb-4 md:mb-0 flex items-center justify-center h-full"
           >
             <motion.div
-              style={{ scale: imageScale }}
+              style={{ scale: imageScale, willChange: 'transform' }}
               className="relative rounded-xl overflow-hidden shadow-2xl border border-gray-200/40 w-full h-full flex items-center justify-center bg-gray-50 p-2"
             >
               <Image
@@ -165,8 +165,11 @@ const PreviewWithFeatures: React.FC = () => {
                 alt="ExAIm Platform Preview"
                 width={1600}
                 height={1000}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
                 className="w-full h-auto max-h-full object-contain"
                 priority
+                fetchPriority="high"
+                quality={85}
               />
             </motion.div>
           </motion.div>

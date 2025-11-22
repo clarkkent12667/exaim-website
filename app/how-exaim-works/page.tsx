@@ -115,10 +115,11 @@ function HeroSection() {
                 alt="ExAIm AI-powered exam preparation platform dashboard showing assignment creation and student analytics"
                 width={1600}
                 height={1000}
+                sizes="(max-width: 768px) 100vw, 1600px"
                 className="w-full h-auto object-contain"
                 priority
-                loading="eager"
                 fetchPriority="high"
+                quality={85}
               />
             </div>
           </motion.div>
@@ -297,10 +298,12 @@ function WalkthroughSection() {
                           alt={`${step.title} - ${step.description}`}
                           width={1200}
                           height={800}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                           className="w-full h-full object-contain transition-transform duration-700 group-hover/card:scale-105"
                           priority={index < 2}
                           loading={index < 2 ? "eager" : "lazy"}
                           fetchPriority={index < 2 ? "high" : "low"}
+                          quality={85}
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/10 lg:bg-gradient-to-l lg:from-white/10 lg:via-transparent lg:to-transparent pointer-events-none" />
                       </motion.div>
@@ -361,10 +364,12 @@ function WalkthroughSection() {
                     alt={`${step.title} - ${step.description}`}
                     width={1200}
                     height={800}
+                    sizes="(max-width: 768px) 100vw, 600px"
                     className="w-full h-full object-contain"
                     priority={index < 2}
                     loading={index < 2 ? "eager" : "lazy"}
                     fetchPriority={index < 2 ? "high" : "low"}
+                    quality={85}
                   />
                 </div>
               </div>

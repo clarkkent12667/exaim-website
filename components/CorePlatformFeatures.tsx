@@ -104,8 +104,11 @@ export default function CorePlatformFeatures() {
                   alt="ExAIm AI-powered exam preparation platform interface showing automated marking, analytics dashboard, and student performance insights"
                   width={800}
                   height={600}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                   className="w-full h-auto object-contain"
                   priority
+                  fetchPriority="high"
+                  quality={85}
                 />
               </div>
             </div>

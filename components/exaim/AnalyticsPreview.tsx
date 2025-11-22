@@ -306,9 +306,10 @@ const AnalyticsPreview: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
                       <motion.div
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: `${topic.averageScore}%` } : { width: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                        initial={{ scaleX: 0 }}
+                        animate={isInView ? { scaleX: topic.averageScore / 100 } : { scaleX: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 + index * 0.1, ease: "easeOut" }}
+                        style={{ transformOrigin: "left" }}
                         className={`h-full ${
                           topic.averageScore >= 75 ? 'bg-green-500' :
                           topic.averageScore >= 65 ? 'bg-yellow-500' : 'bg-red-500'

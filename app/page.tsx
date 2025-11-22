@@ -4,13 +4,15 @@ import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
 import ScrollAnimations from '@/components/ScrollAnimations'
-import CorePlatformFeatures from '@/components/CorePlatformFeatures'
 import StructuredData from '@/components/StructuredData'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { BookOpen, Clock, Zap, BarChart3, Target } from 'lucide-react'
 
 // Lazy load below-the-fold components
+const CorePlatformFeatures = dynamic(() => import('@/components/CorePlatformFeatures'), {
+  loading: () => <div className="min-h-[600px]" />,
+})
 const Pricing = dynamic(() => import('@/components/Pricing'), {
   loading: () => <div className="min-h-[600px]" />,
 })

@@ -207,6 +207,7 @@ export default function Hero() {
                     scale: 1.2,
                     transition: { duration: 0.6 }
                   }}
+                  style={{ willChange: 'transform' }}
                   className="relative z-10"
                 >
                   <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-600 mx-auto mb-2 sm:mb-3" />
