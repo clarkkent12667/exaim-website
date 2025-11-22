@@ -70,7 +70,7 @@ export default function Hero() {
         <div className="text-center">
           {/* Enhanced Main Headline with Stagger Animation */}
           <motion.h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 mb-6 md:mb-8 lg:mb-10 leading-[1.1] sm:leading-tight px-3 sm:px-4"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 mb-6 md:mb-8 lg:mb-10 leading-tight px-2 sm:px-4 max-w-[320px] sm:max-w-none mx-auto"
             variants={containerVariants}
             initial="hidden"
             animate={mounted ? "visible" : "hidden"}
@@ -81,7 +81,7 @@ export default function Hero() {
                 <motion.span
                   key={index}
                   variants={textVariants}
-                  className={`inline-block mr-1.5 sm:mr-2 ${isAIPowered ? 'gradient-text text-shimmer' : ''}`}
+                  className={`inline-block mr-1 sm:mr-2 ${isAIPowered ? 'gradient-text text-shimmer' : ''}`}
                   animate={isAIPowered ? {
                     backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                   } : {}}
@@ -105,7 +105,7 @@ export default function Hero() {
             variants={itemVariants}
             initial="hidden"
             animate={mounted ? "visible" : "hidden"}
-            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mt-3 mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
           >
             ExAIm uses simulated exam conditions, automated marking, and personalised examiner-level feedback to help every student achieve better results while reducing teacher workload.
           </motion.p>
@@ -130,7 +130,7 @@ export default function Hero() {
                 scale: 0.95,
                 transition: { type: "spring", stiffness: 400, damping: 17 }
               }}
-              className="relative px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-lg text-sm sm:text-base md:text-lg font-semibold flex items-center gap-2 overflow-hidden group w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all min-h-[48px]"
+              className="relative px-4 sm:px-6 md:px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-lg text-sm sm:text-base md:text-lg font-semibold flex items-center gap-2 overflow-hidden group w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all min-h-[48px]"
             >
               <motion.div
                 className="absolute inset-0 bg-white/20"
@@ -172,7 +172,7 @@ export default function Hero() {
             variants={containerVariants}
             initial="hidden"
             animate={mounted ? "visible" : "hidden"}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto px-4"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 gap-y-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto px-4"
           >
             {stats.map((stat, index) => (
               <motion.div
