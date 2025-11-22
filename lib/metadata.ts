@@ -38,6 +38,11 @@ export function createPageMetadata({
       locale: 'en_GB',
       type: 'website',
     },
+    twitter: {
+      card: 'summary',
+      title: fullTitle,
+      description: fullDescription,
+    },
     robots: noindex
       ? {
           index: false,

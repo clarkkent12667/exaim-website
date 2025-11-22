@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     type: 'website',
   },
+  twitter: {
+    card: 'summary',
+    title: 'ExAIm - Improve Student Attainment with AI-Powered Exam Preparation',
+    description: 'AI-powered exam preparation platform for schools. Automated marking, personalised feedback, and comprehensive analytics.',
+  },
   robots: {
     index: true,
     follow: true,
