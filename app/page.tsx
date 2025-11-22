@@ -132,7 +132,7 @@ const productSchema = {
     ratingValue: '4.8',
     reviewCount: '20',
   },
-  description: 'AI-powered exam preparation platform for schools. Streamline assessments, automate grading, and boost learning outcomes.',
+  description: 'AI-powered exam preparation platform for schools. Automated marking, personalised feedback, and comprehensive analytics. Trusted by 5,000+ students across 20+ schools.',
   featureList: [
     'AI-powered marking for open-ended answers',
     'Exam-board aligned feedback',

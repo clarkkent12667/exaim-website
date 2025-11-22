@@ -11,8 +11,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'ExAIm - AI-Powered Exam Preparation Platform for Schools',
-  description: 'Streamline assessments, automate grading, and boost learning outcomes with ExAIm. Trusted by 5,000+ students across 20+ schools. GDPR compliant, AI-powered exam preparation for GCSE, A-Level, and IB curricula.',
+  title: 'ExAIm - Improve Student Attainment with AI-Powered Exam Preparation',
+  description: 'AI-powered exam preparation platform for schools. Automated marking, personalised feedback, and comprehensive analytics. Trusted by 5,000+ students across 20+ schools.',
   keywords: 'exam preparation, AI education, automated grading, GCSE, A-Level, IB, school assessment platform, student analytics, exam practice, British curriculum, International Baccalaureate',
   authors: [{ name: 'ExAIm' }],
   creator: 'ExAIm',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'ExAIm - AI-Powered Exam Preparation Platform',
-    description: 'Improving student attainment with AI-powered exam preparation. Trusted by 5,000+ students across 20+ globally renowned schools.',
+    title: 'ExAIm - Improve Student Attainment with AI-Powered Exam Preparation',
+    description: 'AI-powered exam preparation platform for schools. Automated marking, personalised feedback, and comprehensive analytics. Trusted by 5,000+ students across 20+ schools.',
     url: 'https://www.exaim.ai',
     siteName: 'ExAIm',
     locale: 'en_GB',
