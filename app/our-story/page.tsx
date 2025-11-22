@@ -4,7 +4,6 @@ import AnimatedTimeline from './_components/AnimatedTimeline'
 import { AnimatedMissionVision, AnimatedValues, AnimatedImpact } from './_components/AnimatedSections'
 
 const Navbar = dynamic(() => import('@/components/Navbar'), {
-  ssr: false,
   loading: () => <div className="h-20" />,
 })
 

@@ -3,7 +3,6 @@ import AnimatedHero from './_components/AnimatedHero'
 import AnimatedProducts from './_components/AnimatedProducts'
 
 const Navbar = dynamic(() => import('@/components/Navbar'), {
-  ssr: false,
   loading: () => <div className="h-20" />,
 })
 

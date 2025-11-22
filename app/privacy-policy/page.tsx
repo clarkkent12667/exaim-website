@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic'
 import { Shield } from 'lucide-react'
 
 const Navbar = dynamic(() => import('@/components/Navbar'), {
-  ssr: false,
   loading: () => <div className="h-20" />,
 })
 

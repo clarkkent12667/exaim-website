@@ -5,20 +5,12 @@ import DataSecurity from '@/components/DataSecurity'
 import { AnimatedHero, AnimatedSecurityFeatures, AnimatedTrustBadges, AnimatedLegalDocuments } from './_components/AnimatedSections'
 
 const Navbar = dynamic(() => import('@/components/Navbar'), {
-  ssr: false,
   loading: () => <div className="h-20" />,
 })
 
 const Footer = dynamic(() => import('@/components/Footer'), {
   loading: () => <div className="min-h-[200px]" />,
 })
-
-
-const breadcrumbSchema = createBreadcrumbSchema([
-  { name: 'Home', url: '/' },
-  { name: 'Why ExAIm', url: '/why-exaim' },
-  { name: 'Security', url: '/why-exaim/security' },
-])
 
 const breadcrumbSchema = createBreadcrumbSchema([
   { name: 'Home', url: '/' },
