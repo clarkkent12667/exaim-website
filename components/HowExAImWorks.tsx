@@ -66,10 +66,10 @@ export default function HowExAImWorks() {
               whileTap={{ scale: 0.95 }}
             >
               <Link
-                href="/demo"
+                href="/book-a-demo"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors group"
               >
-                Learn more about our AI
+                Book a Demo
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>

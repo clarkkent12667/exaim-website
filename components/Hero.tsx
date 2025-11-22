@@ -68,47 +68,24 @@ export default function Hero() {
         animate={mounted ? "visible" : "hidden"}
       >
         <div className="text-center">
-          {/* Enhanced Main Headline with Stagger Animation */}
-          <motion.h1
-            className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 mb-6 md:mb-8 lg:mb-10 leading-tight px-2 sm:px-4 max-w-[320px] sm:max-w-none mx-auto"
-            variants={containerVariants}
-            initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
-          >
+          {/* Main Headline */}
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 mb-6 md:mb-8 lg:mb-10 leading-tight px-2 sm:px-4 max-w-[320px] sm:max-w-none mx-auto">
             {headlineWords.map((word, index) => {
               const isAIPowered = word.toLowerCase() === 'ai-powered'
               return (
-                <motion.span
+                <span
                   key={index}
-                  variants={textVariants}
                   className={`inline-block mr-1 sm:mr-2 ${isAIPowered ? 'gradient-text text-shimmer' : ''}`}
-                  animate={isAIPowered ? {
-                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                  } : {}}
-                  transition={isAIPowered ? {
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear"
-                  } : {}}
-                  whileHover={isAIPowered ? {
-                    scale: 1.05,
-                    transition: { type: "spring", stiffness: 400, damping: 10 }
-                  } : {}}
                 >
                   {word}
-                </motion.span>
+                </span>
               )
             })}
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            initial="hidden"
-            animate={mounted ? "visible" : "hidden"}
-            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mt-3 mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
-          >
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mt-3 mb-8 md:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
             ExAIm uses simulated exam conditions, automated marking, and personalised examiner-level feedback to help every student achieve better results while reducing teacher workload.
-          </motion.p>
+          </p>
 
           {/* Enhanced CTA Button with Spring Animations */}
           <motion.div

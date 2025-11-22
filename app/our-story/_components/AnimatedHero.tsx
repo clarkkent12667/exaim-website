@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Sparkles, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
@@ -13,21 +13,7 @@ export default function AnimatedHero() {
   return (
     <section ref={ref} className="section-padding-lg pt-32 md:pt-40 lg:pt-44 bg-white relative overflow-hidden">
       <div className="container-wrapper relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-4xl mx-auto"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-500 mb-8 shadow-lg"
-          >
-            <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-white" />
-          </motion.div>
-          
+        <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight px-4">
             Born in the classroom.
             <br />
@@ -38,12 +24,7 @@ export default function AnimatedHero() {
             ExAIm was created by the founders of Improve ME Institute, an award-winning after-school centre in the UAE with over 1,000 students and 40 tutors. After years of witnessing the challenges teachers and students face in exam preparation, ExAIm was built to make exam excellence accessible, efficient, and data-driven. Discover our <Link href="/our-products" className="text-primary-600 hover:text-primary-700 underline">AI-powered exam preparation tools</Link> and see <Link href="/how-exaim-works" className="text-primary-600 hover:text-primary-700 underline">how ExAIm works</Link>.
           </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center px-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <Link href="/book-a-demo" className="w-full sm:w-auto">
               <Button
                 size="lg"
@@ -62,8 +43,8 @@ export default function AnimatedHero() {
                 Explore our products
               </Button>
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   )

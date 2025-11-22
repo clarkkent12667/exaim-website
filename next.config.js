@@ -30,6 +30,11 @@ const nextConfig = {
         destination: '/terms-and-conditions',
         permanent: true,
       },
+      {
+        source: '/demo',
+        destination: '/book-a-demo',
+        permanent: true,
+      },
     ]
   },
   // Security headers

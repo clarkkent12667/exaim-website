@@ -24,7 +24,6 @@ import {
   GraduationCap,
   School,
   Users,
-  Sparkles,
   Zap,
   Brain,
   TrendingUp,
@@ -44,24 +43,11 @@ function HeroSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} className="section-padding-lg pt-32 md:pt-40 lg:pt-44 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+    <section ref={ref} className="section-padding-lg pt-32 md:pt-40 lg:pt-44 bg-white">
       <div className="container-wrapper">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center">
           {/* Left Column - Text */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="space-y-4 sm:space-y-6 px-4 sm:px-0"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary-100"
-            >
-              <Sparkles className="w-6 h-6 md:w-7 md:h-7 text-primary-600" />
-            </motion.div>
+          <div className="space-y-4 sm:space-y-6 px-4 sm:px-0">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               How ExAIm works
             </h1>
@@ -84,23 +70,8 @@ function HeroSection() {
                   </Button>
                 </Link>
               </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto"
-              >
-                <Link href="/demo">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="rounded-full px-6 sm:px-8 py-4 sm:py-6 font-medium text-sm sm:text-base w-full sm:w-auto bg-white border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300"
-                  >
-                    Talk to our team
-                  </Button>
-                </Link>
-              </motion.div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column - Preview Image */}
           <motion.div
@@ -183,14 +154,6 @@ function WalkthroughSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16 lg:mb-20"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary-100 to-primary-50 mb-4 md:mb-6"
-          >
-            <Sparkles className="w-7 h-7 text-primary-600" />
-          </motion.div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 px-4">
             Walk through an example
           </h2>

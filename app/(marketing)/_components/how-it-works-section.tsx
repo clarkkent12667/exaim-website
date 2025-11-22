@@ -75,7 +75,7 @@ export default function HowItWorksSection() {
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               className="pt-2"
             >
-              <Link href="/demo">
+              <Link href="/book-a-demo">
                 <motion.div
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
@@ -85,7 +85,7 @@ export default function HowItWorksSection() {
                     size="lg" 
                     className="rounded-full px-8 py-6 bg-gray-900 hover:bg-gray-800 text-white font-medium text-base shadow-md hover:shadow-lg transition-all duration-300"
                   >
-                    Learn more about our AI
+                    Book a Demo
                   </Button>
                 </motion.div>
               </Link>

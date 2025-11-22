@@ -2,9 +2,12 @@ import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import ScrollAnimations from '@/components/ScrollAnimations'
 import type { Metadata } from 'next'
-import DemoBookingForm from './_components/DemoBookingForm'
 import { Mail, Linkedin } from 'lucide-react'
 import Link from 'next/link'
+
+const DemoBookingForm = dynamic(() => import('./_components/DemoBookingForm'), {
+  loading: () => <div className="min-h-[400px]" />,
+})
 
 const Footer = dynamic(() => import('@/components/Footer'), {
   loading: () => <div className="min-h-[200px]" />,
