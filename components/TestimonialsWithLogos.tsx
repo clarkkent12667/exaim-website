@@ -158,22 +158,21 @@ export default function TestimonialsWithLogos() {
           
           {/* Scrolling container */}
           <div className="flex overflow-hidden">
-            <div className="flex gap-4 md:gap-6 lg:gap-8 items-center shrink-0 marquee">
+            <div className="flex gap-6 md:gap-8 lg:gap-12 items-center shrink-0 marquee">
               {[...schools, ...schools].map((school, index) => (
-                <motion.div
+                <div
                   key={`marquee-${index}`}
-                  whileHover={{ scale: 1.1 }}
-                  className="flex-shrink-0 h-12 sm:h-16 md:h-20 grayscale hover:grayscale-0 transition-all duration-300 px-2 sm:px-4"
+                  className="flex-shrink-0 flex items-center justify-center h-16 md:h-20 grayscale hover:grayscale-0 transition-all duration-300 px-4 hover:scale-110"
                 >
                   <Image
                     src={school.logo}
                     alt={school.name}
-                    width={200}
+                    width={180}
                     height={80}
-                    className="max-h-full w-auto object-contain"
-                    unoptimized
+                    className="h-full w-auto object-contain"
+                    loading="lazy"
                   />
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

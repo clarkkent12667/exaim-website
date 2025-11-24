@@ -145,39 +145,24 @@ export default function SocialProof() {
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
             
             {/* Scrolling container */}
-            <div className="flex">
-              {/* First set of logos */}
-              <motion.div
-                className="flex gap-1 shrink-0"
-                animate={{
-                  x: ['0%', '-50%'],
-                }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 20,
-                    ease: "linear",
-                  },
-                }}
-              >
+            <div className="flex overflow-hidden">
+              <div className="flex gap-6 md:gap-8 lg:gap-12 items-center shrink-0 marquee">
                 {[...schools, ...schools].map((school, index) => (
-                  <motion.div
-                    key={`first-${index}`}
-                    whileHover={{ scale: 1.1 }}
-                    className="flex items-center justify-center h-20 w-40 md:w-48 shrink-0"
+                  <div
+                    key={`marquee-${index}`}
+                    className="flex items-center justify-center h-16 md:h-20 shrink-0 grayscale hover:grayscale-0 transition-all duration-300 px-4 hover:scale-110"
                   >
                     <Image
                       src={school.logo}
                       alt={school.name}
-                      width={200}
-                      height={60}
-                      className="max-w-full max-h-full object-contain"
-                      unoptimized
+                      width={180}
+                      height={80}
+                      className="h-full w-auto object-contain"
+                      loading="lazy"
                     />
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
           </div>
         </motion.div>
